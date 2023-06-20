@@ -114,3 +114,17 @@ Encuestas/__pycache__/models.cpython-311.pyc
 Encuestas/__pycache__/urls.cpython-311.pyc
 Encuestas/__pycache__/views.cpython-311.pyc
 Encuestas/__pycache__/__init__.cpython-311.pyc
+Aicros/__pycache__/
+Aicros/migrations/
+Encuestas/__pycache__/
+Encuestas/migrations/
+Productos/__pycache__/
+Productos/migrations/
+Servicios/__pycache__/
+Serviciosmigrations/
+Nosotros/__pycache__/
+Nosotros/migrations/
+Sweb/__pycache__/
+Sweb/migrations/
+Documentos/__pycache__/
+Documentos/migrations/
