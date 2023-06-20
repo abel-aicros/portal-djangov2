@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block title%}{{encuesta.nombre}}{%endblock%}
+{% block content %}
+
+  <div class="survey-container">
+    <div class="d-flex flex-column">
+       
+                <h3> Estimado cliente:</h3>
+                <p> {{encuesta.encabezado | linebreaksbr}}</p>
+       
+    </div> 
+    
+    <div >
+        <form class="d-flex flex-column" id="form" method='POST'>
+        {% csrf_token %}
+        <div class="d-flex flex-column">
+
+        {% for p in encuesta.preguntas.all%}
+        <div class="d-flex flex-column ">
+            <label class="question">{{p.titulo}}</label>
+
+            {% for g in p.grupo_de_respuestas.all %}
+            <div class="answers">
+                {% if g.tipo == 'textarea' %}
+
+                    {% for r in g.respuestas.all %}
+                        <textarea name="{{p.id}}{{g.id}}" id="" ></textarea>
+                    {% endfor %}  
+                {% else %}
+
+                    {% for r in g.respuestas.all %}
+                    <div class="d-flex flex-row answer">
+                        {% if  g.tipo == "radio" or g.tipo == "checkbox" %}
+                            
+                                <input type="{{g.tipo}}" name="{{p.id}}{{g.id}}" value="{{r.valor}}">&nbsp; {{r.valor}}</input><br>
+                            
+                        {% else %}
+                            <input type="{{g.tipo}}" name="{{p.id}}{{g.id}}" value=""></input><br>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        </div>
+            <div class="d-flex flex-column">
+                <strong class="survey-footer d-flex flex-column">{{encuesta.pie| linebreaks}}</strong>
+            </div>
+    
+            <!-- Multi-line Text Input Control -->
+            <div class="d-flex flex-column">
+            <button class="botoncito" type="submit" value="submit">
+                Enviar
+            </button>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+{% endblock content %}

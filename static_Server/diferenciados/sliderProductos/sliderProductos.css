@@ -1,0 +1,237 @@
+a {
+    text-decoration: none;
+}
+
+.caja {
+    width: 230px;
+    /* height: auto; */
+    border-radius: 8px;
+    overflow: hidden;
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); */
+    margin: 10px;
+}
+
+/* ------------------------ Empresa en Cifras ------------------------ */
+
+.caja-empresa {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgb(239, 127, 145);
+}
+
+.título {
+    background-color: inherit;
+    word-wrap: break-word;
+    width: 200px;
+    height: 200px;
+    padding: 20px 0px 0px 20px;
+    margin-left: 10px;
+    text-align: left;
+    align-content: center;
+    margin-right: 20px;
+    place-content: center;
+}
+
+
+.numero-Empresa {
+    text-align: left;
+    align-content: center;
+    display: grid;
+    place-content: center;
+    top: 50% !important;
+    height: 100%;
+    font-size: 70px;
+    width: 100%;
+    margin-right: 10px;
+    padding-right: 30px;
+    background-color: inherit;
+}
+/* ------------------------ Fin Empresa en Cifras ------------------------ */
+
+/* ------------------------ Equipo de Trabajo ------------------------ */
+
+.caja-equipoTrabajo {
+    width: 360px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    margin: 10px;
+}
+
+.numero-equipoTrabajo {
+    margin: 10px;
+}
+
+/* ------------------------ Fin Equipo de Trabajo ------------------------ */
+
+/* ------------------------ Líneas de Negocio ------------------------ */
+
+.caja-lineasNegocio {
+    width: 250px;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    background-color: #ffffff;
+}
+
+.imgLineasNegocio {
+    margin-top: 15px;
+    margin-left: 15px;
+    height: auto;
+}
+
+.textoLineasNegocio {
+    padding: 20px;
+    height: auto;
+    text-align: left;
+    color: black;
+}
+
+/* ------------------------ Fin Líneas de Negocio ------------------------ */
+
+/* ------------------------ Alianzas ------------------------ */
+.caja-Alianza {
+    border-radius: 8px;
+    overflow: hidden;
+    width: auto;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: grid;
+    place-content: center;
+    top: 50% !important;
+    margin-right: 100px;
+}
+
+.imgAlianza {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.imgAlianza>img {
+    width: auto;
+    height: auto;
+}
+
+/* ------------------------ Fin Alianzas ------------------------ */
+
+.caja2 {
+    width: 180px;
+    /* height: auto; */
+    border-radius: 20px;
+    overflow: hidden;
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); */
+    margin: 10px;
+}
+
+.slide-img {
+    height: 230px;
+    position: relative;
+}
+
+.slide-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+    border-top-left-radius: calc(.25rem - 1px) !important;
+    border-top-right-radius: calc(.25rem - 1px) !important;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.detail-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.type {
+    display: flex;
+    flex-direction: column;
+}
+
+.type a {
+    color: #222222;
+    margin: 10px 0px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding-right: 8px;
+
+}
+
+.type span {
+    color: rgba(26, 26, 26, 0.5);
+}
+
+.price {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.sobreTodo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy-btn {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    color: #252525;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, .2);
+}
+
+.buy-btn:hover {
+    color: white;
+    background-color: palevioletred;
+    transition: all ease 0.3s;
+}
+
+.overlay {
+    visibility: hidden;
+}
+
+.slide-img:hover .overlay {
+    visibility: visible;
+    animation: fade 0.5s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

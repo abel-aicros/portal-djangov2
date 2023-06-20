@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block title %}Productos{% endblock title %}
+{% block content %}
+<div class="nuevaSeccion">
+    <section id="bannerProductos" class="bannerclass">
+        <h1 class='banner_title'>
+            <div>{{banner_title.texto}}<br><p class='banner_title_bold'>{{banner_title.texto_negrita}}</p>
+            </div></h1> 
+    </section>
+    
+    <div class="backgraondline backgraondline-prod "></div>
+    <div class="SeccionesGenerales SegundoBloque">        
+        <section>
+
+            {% for descripcion_desarrollados_Aicros in Descripcion_Productos_Aicros %}
+            <div class="textoBackground">
+                <header class="blanco"><h2>{{descripcion_desarrollados_Aicros.título}}</h2></header>
+                <p>
+                    {{descripcion_desarrollados_Aicros.texto_1}}
+                </p>
+            </div>
+            {% endfor %}
+
+            <div>
+                
+                {% for i in Producto_Aicros %}
+                <form name="form_for_{{i.título}}" action={% url 'productos' %} method='POST' class="row">
+                    {% csrf_token %}
+
+                    <div class="cartasGenerales cartasProductos">
+                        <article class="logoProducto">
+                            <img src="{{i.foto.url}}" alt="">
+                        </article>
+                        <article class="infoProducto">
+                            <div>
+                                <h3>{{i}}</h3>
+                                <img src="{{i.ícono.url}}" alt="icono">
+                            </div>
+                            <p>
+                                {{i.resumen}}
+                            </p>
+                            <input name='product_id' type="hidden" value="{{i.id}}">
+                            <input name='ptype' type="hidden" value="aicros">
+                            <button>{{i.nombre_Botón}}</button>
+                        </article>
+                    </div>
+                    </form>
+                {% endfor %}
+                
+            </div>            
+        </section>
+    </div>
+    <div class="backgraondline"></div>
+    <div class="SeccionesGenerales SegundoBloque">        
+        <section>
+            <div class="textoBackground">
+
+                {% for descripcion_productos_Aicros in Descripcion_Productos_Distribuidos %}
+                <header class="blanco"><h2>{{descripcion_productos_Aicros.título}}</h2></header>
+                <p>
+                    {{descripcion_productos_Aicros.texto_1}}
+                </p>
+                {% endfor %}
+            </div>
+            
+
+            <div >
+                
+                {% for i in Producto_Distribuido_Aicros %}
+                <form name="form_for_{{i.título}}" action={% url 'productos' %} method='POST' class="row">
+                    {% csrf_token %}
+                    <div class="cartasGenerales cartasProductos">
+                        <article class="logoProducto">
+                            <img src="{{i.foto.url}}" alt="">
+                        </article>
+                        <article class="infoProducto">
+                            <div>
+                                <h3>{{i}}</h3>
+                                <img src="{{i.ícono.url}}" alt="icono">
+                            </div>
+                            <p>
+                                {{i.resumen}}
+                            </p>
+
+                            <input name='product_id' type="hidden" value="{{i.id}}">
+                            <input name='ptype' type="hidden" value="Daicros">
+
+                            <button>{{i.nombre_Botón}}</button>
+                        </article>
+                    </div>
+                    </form>
+                {% endfor %}
+
+            </div>            
+        </section>
+    </div>
+</div>
+ 
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block title%}Encuestas{%endblock%}
+{% block content %}
+
+
+
+
+<div class="nuevaSeccion">
+    <section id="bannerEncuesta" class="bannerclass">
+        <h1 class='banner_title'>
+            <div>{{banner_title.texto}}<br><p class='banner_title_bold'>{{banner_title.texto_negrita}}</p>
+            </div></h1> 
+    </section>
+    <div class="SeccionesGenerales">
+        <section class="seccionInicial">
+            {% for sv in survey_title%}
+            <header> <h2>{{sv.titulo}}</h2></header>
+            <div>
+                <p>
+                    {{sv.texto}}
+                </p>    
+            </div>
+            {% endfor %}
+            {%for enc in encuestas%}
+    <div class="d-flex flex-column">
+    
+    <a  href="{% url 'encuesta' enc.id%}"><p class="black-highlight">&#x2022 {{enc.nombre}}</p></a>
+    
+    </div>
+    {%endfor%} 
+        </section>
+    </div>
+    <div class="backgraondline"></div>
+{% endblock %}
+    
+
+    

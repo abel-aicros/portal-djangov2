@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block title%}{{product_name}}{%endblock title%}
+
+{% block content %}
+
+<section id="bannerProductos" class="bannerclass">
+    <h1 class='banner_title'>
+        <div>{{banner_title.texto}}<br><p class='banner_title_bold'>{{banner_title.texto_negrita}}</p>
+        </div></h1> 
+</section>
+
+
+
+<div class="prod-container">
+
+        <div class="d-flex flex-row prod-title">
+        <h2>{{product_name}}</h2>
+        <img src="{{product_icon}}" class="prod-icon" >
+        </div>
+
+
+        <div class="prod-img-container">
+        <img src="{{product_image}}">
+        </div>
+        
+        <p >{{product_description}}</p>
+    </div>
+
+{% endblock %}

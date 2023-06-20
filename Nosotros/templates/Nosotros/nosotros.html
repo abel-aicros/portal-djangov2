@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Nosotros{% endblock title %}
+{% block content %}
+<div class="nuevaSeccion">
+    <section id="bannerNosotros" class="bannerclass">
+        <h1 class='banner_title'>
+            <div>{{banner_title.texto}}<br><p class='banner_title_bold'>{{banner_title.texto_negrita}}</p>
+            </div></h1> 
+    </section>
+    <div class="SeccionesGenerales">
+        <section class="seccionInicial">
+            {% for top_About in Encabezado_Nosotros %}
+            <header> <h2>{{top_About.título}}</h2> </header>
+            <div> 
+                <p> 
+                    {{top_About.texto_1}}
+                </p> 
+                <p>
+                    {{top_About.texto_2}}
+                </p>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section>
+            {% for missiontitle in title_mission %}
+            <header> <h2>{{missiontitle}}</h2> </header>
+            {% endfor %}
+                <div class="cartasGenerales">
+
+                    {% for i in mvv %}
+                        
+                        <article>
+                            <h3>{{i}}</h3>
+                            <p>{{i.descripción}}</p>
+                        </article>
+
+                    {% endfor %}
+                    
+                </div>
+        </section>
+    </div>
+
+    <div class="backgraondline"></div>
+    <div class="SeccionesGenerales SegundoBloque">
+        <section id="Historias">
+            <header class="blanco"> <h2>{% for historytitle in title_history %}{{historytitle}}{% endfor %}</h2> </header>
+            <div id="lineaDeTiempoContinuo" ></div>    
+            <div class="HistoriaSlider cartasGenerales">
+                        
+                {% for i, values in history_by_lapse.items  %}
+                    <div>
+                        <div class="lineaDeTiempo">
+                            <div></div>
+                        </div>
+                        <div class="blanco"> 
+                            <h2>{{i}}</h2>
+                        </div>
+                        <article>
+                            {#<p>{{i.descripción}}</p>#}
+                            {% for j in values %}
+                                    <p><strong>{{j}} - </strong>{{j.descripción}}</p>                                        
+                                  
+                            {% endfor %}
+                        </article> 
+                    </div>
+                {% endfor %}
+
+            </div>
+        </section>
+
+        <section id="Equipo">
+            <header><h2>{% for workteamtitle in title_workteam %}{{workteamtitle}}{% endfor %}</h2></header>
+            <div class="cartasEquipo">
+
+                {% for i in Miembro_de_Trabajo %}
+
+                    <article class="cartaEquipo">
+                        <div class="fondoEquipo" style="background-image: url('{{i.foto.url}}');">
+                            
+                        </div>
+                        <div class="nombre">
+                            <p><strong>{{i.nombre}}</strong> </p>
+                            <p><small>{{i.cargo}}</small></p>
+                            <a href="mailto:{{i.correo}}"><p>{{i.correo}}</p></a>
+                        </div>
+                    </article>
+
+                {% endfor %}
+                
+            </div>  
+        </section>
+
+        <section>
+            <header> <h2>{% for eventtitle in title_events %}{{eventtitle}}{% endfor %}</h2> </header>
+                <div class="cartasGenerales">
+                    {% for i in Evento %}
+                        
+                        <article>
+                            <h3>{{i}}</h3>
+                            <p>{{i.descripción}}</p>
+                        </article>
+
+                    {% endfor %}
+                </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

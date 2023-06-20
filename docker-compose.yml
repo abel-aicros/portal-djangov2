@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  portal-django-aicros:
+    container_name: portal-django-aicros
+    build:
+        context: .
+    image: portal-django-aicros:dev
+    ports:
+      - "8001:8000"
+    networks:
+      - portal-django-aicros_network
+
+networks:
+  portal-django-aicros_network:
+      name: portal-django-aicros_network

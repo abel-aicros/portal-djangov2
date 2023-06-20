@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Servicios{% endblock title %}
+{% block content %}
+<div class="nuevaSeccion">
+    <section id="bannerServicios" class="bannerclass">
+        <h1 class='banner_title'>
+            <div>{{banner_title.texto}}<br><p class='banner_title_bold'>{{banner_title.texto_negrita}}</p>
+            </div></h1> 
+    </section>
+    <div class="SeccionesGenerales">
+        <section class="seccionInicial">
+            {% for i in Encabezado_Servicio %}
+            <header> <h2>{{i}}</h2></header>
+            <div>
+                <p>
+                    {{i.texto_1}}
+                </p>
+                <p>
+                    {{i.texto_2}}
+                </p>    
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+    <div class="backgraondline"></div>
+    <div class="SeccionesGenerales SegundoBloque">
+        <div class="textoBackground">
+            <header class="blanco"><h2>Servicios</h2></header>
+            <div id="Servicos_Categorias">
+                {% for i in lineas_de_negocio %}
+                <div id="{{i.id}}" >
+                    <article id="{{i.id}}">
+                        <img id="{{i.id}}" src="{{i.ícono.url}}" alt="icono" draggable="false">
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
+            <h3 id="Servicos_Categorias_h3">
+                <small> Categorías de servicios. </small>
+            </h3>
+        </div>
+        
+        <div id="Servicioscard" class="card ">
+            
+            {% for i in servicio_aicros %}
+
+                <article id="{{i.line_id.id}}">
+                    <img src="{{i.line_id.ícono.url}}" alt="icono">
+                    <p>
+                        {{i}}
+                    </p>
+                </article>
+
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

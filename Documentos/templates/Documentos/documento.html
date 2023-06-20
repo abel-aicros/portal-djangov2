@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Documentos{% endblock title %}
+{% block content %} 
+<div class="nuevaSeccion">
+    <section id="bannerDocumento" class="bannerclass">
+        <h1 class='banner_title'>
+            <div>{{banner_title.texto}}<br><p class='banner_title_bold'>{{banner_title.texto_negrita}}</p>
+            </div></h1> 
+    </section>
+    <div class="SeccionesGenerales">
+        <section class="seccionInicial">
+            {% for i in Encabezado_Documentos %}
+            <header> <h2>{{i}}</h2></header>
+            <div>
+                <p>
+                    {{i.texto_1}}
+                </p>
+                <p>
+                    {{i.texto_2}}
+                </p>    
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+    <div class="backgraondline"></div>
+    <div class="SeccionesGenerales SegundoBloque">
+        
+        <section class="textoBackground ">
+            {% for i in Texto_Documentos_Rapidos %}
+            <header class="blanco"><h2>{{i}}</h2></header>            
+            <p>
+                {{i.texto}}
+            </p>
+            {% endfor %}
+            <div class="">
+                <article class="DocumentosRecientes cartasDocumentos">
+                    
+                    {% for i in doc_rap %}
+                    
+                        <article>
+                            <a href="{{i.documento.url}}" target="_blank">
+                                <div>
+                                    <img src="{% static 'img/icon/Propuesta de Diseño-108.svg' %}" alt="icono">
+                                    <p>
+                                        {{i}}
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                    
+                    {% endfor %}
+                   
+            </div>
+        </section>
+        
+        <script> 
+            window.data = { data: {{data|safe}} } 
+            window.columnajs = { columnajs: {{columnajs|safe}} }
+        </script>
+        
+        <section id="Buscador">
+            <form action="">{% csrf_token %}
+                <input type="text" name="filtrado" value="{{filtro}}" placeholder="Buscar un Documento">
+                <button> Buscar </button>
+            </form>
+        </section> 
+        {% if secciones %}
+        {% for key,values in docs_by_section.items %}
+            <section class="Documentos">
+                <header><h2>{{key}}</h2></header>
+                <div class="CascadaDocumento">
+                    <article class="cartasDocumentos">
+                        <article id="{{ forloop.counter0 }}{{values|length}}1">
+
+                            {% for j in values %}
+                                <a href="{{j.doc_file.url}}" class='doc_link' target="_blank">
+                                    <div>
+                                    
+                                        <img src="{% static 'img/icon/Propuesta de Diseño-108.svg' %}" alt="icono">
+                                        <p>
+                                            {{j}}
+                                        </p>
+                                    
+                                    </div>
+                                </a>
+                            {% endfor %}
+                            
+                        </article>                    
+                        <article id="{{ forloop.counter0 }}{{values|length}}2"></article>
+                        <article id="{{ forloop.counter0 }}{{values|length}}3"></article>
+                    </article>
+                </div>
+            </section>
+            {% endfor %}
+        {% endif %}
+        
+        
+        {% if vacio is 0 %}
+            <section>
+                <p>Lo sentimos no existen documentos relacionados a su busquedas.</p>
+            </section>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

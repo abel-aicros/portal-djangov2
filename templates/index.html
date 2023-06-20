@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% load static %}
+{%block title%}Bienvenido{%endblock%}
+{% block content %}
+   
+        <section id="banner" class="bannerclass">
+            <h1 class='banner_title'>
+                <div>{{banner_title.texto}}<br><p class='banner_title_bold'>{{banner_title.texto_negrita}}</p>
+                </div></h1> 
+        </section>
+         
+        <div id="Secciones">
+            <section id="Primera">
+                <div id="lineas">            
+                    <img src="{% static 'img/Lineas/Propuesta de Diseño-174.png'%}" alt="lineas">
+                </div>
+                <div id="PrimerBloque">
+                    <section id="Promociones" class="secciones">
+                        <header> <h2>{%for i in promo_title%}{{i}}{%endfor%}</h2> </header>
+                        <div id="contenedor-targetas">
+                            <div class="tarjetas">
+                                
+                                {% for i in Carrusel %}
+
+                                    <article id="Tarjeta{{i.id}}">
+                                        <img src="{{i.foto.url}}" alt="">
+                                    </article>
+
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="Productos" class="secciones">
+                        {% for cajaProd in InicioProducto %}
+                        <article class="Inicial">
+                            <header> 
+                                <h2>{{cajaProd.name}}</h2> </header>
+                                <div>
+                                    <p>{{cajaProd.description}}</p>
+                                </div>
+                                <a href="{% url 'productos' %}"> <button><h5>Ir a productos</h5></button> </a>
+                        </article>
+                        
+                            {% endfor %}
+                            
+                            <div class="cartas">
+    
+                            {% for carruselProd in Carrusel_Productos %}
+                                {% if carruselProd.show %}
+                                <article id="carta{{carruselProd.id}}" {% if not carruselProd.show_text%}class="carta-image"{% endif %}>
+                                    {% if carruselProd.show_image %}
+                                    <div class="carrusel-img" style="background-image: url( '{{ carruselProd.foto_carrusel.url }}' );">
+                                    </div>
+                                    {% endif %}
+                                    {% if carruselProd.show_text %}
+                                    <div class="carta-text">
+                                    <h3>{{carruselProd.título}}</h3>
+                                    <p>{{carruselProd.resumen}}</p>
+                                </div>
+                                    {% endif %}
+                                </article>
+                                {% endif %}
+                            {% endfor %}                            
+                                                        
+                        </div>
+                    </section>
+
+                    <section id="Servicios" class="secciones">
+                        {% for cajaServ in InicioServicio %}
+                        <article class="Inicial">
+                            <header> 
+                                <h2>{{cajaServ.título}}</h2> </header>
+                                <div>
+                                    <p>{{cajaServ.descripción}}</p>
+                                </div>
+                                <a href="{% url 'servicios' %}"> <button><h5>Ir a servicios</h5></button> </a>
+                        </article>
+                        
+                            {% endfor %}
+                        <div class="cartas " id="cartas02">
+                            
+                            {% for carruselServ in Carrusel_Servicios %}
+                            {% if carruselServ.show %}
+                                <article id="carta{{carruselServ.id}}" {% if not carruselServ.show_text %}class="carta-image"{% endif %}>
+                                    {% if carruselServ.show_image %}
+                                    <div div class="carrusel-img" style="background-image: url('{{carruselServ.foto_carrusel.url}}');">
+                                    </div>
+                                    {% endif %}
+                                    {% if carruselServ.show_text %}
+                                    <div class="carta-text">
+                                    <p>{{carruselServ.descripción}}</p>
+                                </div>
+                                    {% endif %}
+                                </article>
+                                {% endif %}
+                            {% endfor %}                                                     
+                            
+                        </div>
+                    </section>                
+                                    
+                    <section id="lineasdenegocios" class="secciones">
+                        <header><h2>{% for j in buss_lines_title %}{{j}}{% endfor %}</h2></header>
+                        <div class="card ">
+                            
+                            {% for i in Líneas_de_Negocio %}
+
+                                <article> 
+                                    <a href="Servicios#line{{i.id}}  ">                                   
+                                    <img src="{{ i.ícono.url }}" alt="">
+                                    </a>
+                                    <p>{{i.descripción}}</p>
+                                </article>
+
+                            {% endfor %}                            
+                            
+                        </div>
+                    </section>
+
+                    <section id="laempresa" class="secciones">
+                        <header><h2>{% for i in stats_title %}{{i}}{% endfor %}</h2></header>
+                        <div class="target">
+                            
+                            {% for j in Cifra %}
+                                <article id="target{{forloop.counter}}" class="cifra-caja">
+                                    <div>
+                                        <h3>{{j.título}}</h3>
+                                    </div>
+                                    <div>
+                                        <h2>{{j.número}}</h2>
+                                    </div>
+                                </article> 
+
+                            {% endfor %}                            
+
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+        <div class="backgra"></div>
+
+        <section id="Segunda">
+            <section id="Noticias">                
+                    <header><h2 >{% for i in news_title %}{{i}}{% endfor %}</h2></header>
+                    <div class="publicaciones ">
+                        {% for i in noticias|slice:":3" %}
+
+                            <article id="noticia{{i.id}}"><a href="{% url 'noticias' id=i.id %}">
+                                <div class="imagen-noticias" style="background-image: url('{{i.foto.url}}');"></div>
+                            </a>
+                                <h3>{{i}}</h3>
+                                <p>{{i.Introducción_de_Noticia}}</p>
+                                <p><small>{{i.Fecha}}</small></p>
+                                <div id="redesSociales">
+                                    <a href="https://facebook.com/share.php?u=www.aicros.cu%2Fnoticias%2F{{i.id}}" target="_blank"
+									href-data="www.aicros.cu%2Fnoticias%2F{{i.id}}">
+                                    <svg viewBox="0 0 6 10.3"><path class="svg" d="M5.7,1.9c-1.9-.2-2.2,0-2,1.6H5.4v2H3.7v5.8H1.3V5.5H0V3.6H1.3V2.5A2.3,2.3,0,0,1,3.9,0L5.7.2c.2,0,.3.1.2.4S5.8,1.5,5.7,1.9Z"/></svg>
+                                </a>
+                                <a target="_blank"
+                                href="https://twitter.com/intent/tweet?text={{i.Introducción_de_Noticia_parsed}}">
+                                    <svg viewBox="0 0 12.16 10.18"><path class="svg" d="M11.88.42,11,1.6l1.06-.27.07.07a8.33,8.33,0,0,1-.82.86.94.94,0,0,0-.37.81A7.23,7.23,0,0,1,.31,9.3,1,1,0,0,1,0,9.06,5.42,5.42,0,0,0,3.52,8a2.65,2.65,0,0,1-2.3-1.75l.86,0A2.88,2.88,0,0,1,.3,3.65l.87.23A2.9,2.9,0,0,1,.67.51a7.4,7.4,0,0,0,5.2,2.66v-.6A2.45,2.45,0,0,1,7.24.33,2.25,2.25,0,0,1,9.76.45a1.29,1.29,0,0,0,1.48.1l.52-.24Z"/></svg>
+                                    </a>
+                                </div>
+                            </article>
+                                
+                        {% endfor %}                       
+
+
+                    </div>
+            </section>
+
+            <section id="Alianzas">
+                    <header><h2>{% for i in alliance_title %}{{i}}{% endfor %}</h2></header>
+                    <article class="alian">
+                        <div id="alianza">
+ 
+                            {% for j in Alianza %}
+
+                                <div class="alliance-container {{j.id}}">
+                                    <img src="{{j.foto.url}}" alt="">
+                                </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </article>
+            </section>
+        </section>    
+        
+{% endblock %}
