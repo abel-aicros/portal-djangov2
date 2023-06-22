@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3+-pi=go@1l=+fx4t+8idyl$ou(12kv@m!7^=x$!m+36=cf7a)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10*1024*1024
 
 ALLOWED_HOSTS = ["*"]
@@ -95,29 +95,28 @@ CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8000/", "http://*.cu", "https://*.cu",
 #     }
 # }
 
-# DATABASE IN NEON
-# DATABASES = {
-#   'default': {
-#     'ENGINE': 'django.db.backends.postgresql',
-#     'NAME': 'neondb',
-#     'USER': 'origamirhapsody',
-#     'PASSWORD': 'bfAYdiJI92Ws',
-#     'HOST': 'ep-wispy-thunder-308584.us-east-2.aws.neon.tech',
-#     'PORT': '5432',
-#   }
-# }
-
 DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    #'NAME': 'portalv2test',
     'NAME': 'portaldb',
-    'USER': 'postgres',
-    'PASSWORD': 'postgres',
-    'HOST': 'localhost',
+    'USER': 'abel-aicros',
+    'PASSWORD': 'R2Gy7TaJqHLo',
+    'HOST': 'ep-misty-frog-305205.us-east-2.aws.neon.tech',
     'PORT': '5432',
   }
 }
+
+# DATABASES = {
+#   'default': {
+#     'ENGINE': 'django.db.backends.postgresql',
+#     #'NAME': 'portalv2test',
+#     'NAME': 'portaldb',
+#     'USER': 'postgres',
+#     'PASSWORD': 'postgres',
+#     'HOST': 'localhost',
+#     'PORT': '5432',
+#   }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
