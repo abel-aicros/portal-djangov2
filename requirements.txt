@@ -4,7 +4,7 @@ Babel==2.12.1
 certifi==2022.12.7
 charset-normalizer==2.1.1
 colorama==0.4.6
-Django==4.1.1
+Django==4.2.2
 django-adminlte-3==0.1.6
 django-colorfield==0.7.2
 django-jazzmin==2.5.0
