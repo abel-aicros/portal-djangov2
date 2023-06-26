@@ -354,3 +354,6 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-success",
     }
 }
+
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
