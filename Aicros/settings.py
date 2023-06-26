@@ -354,6 +354,3 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-success",
     }
 }
-
-from django.http import HttpResponse
-HttpResponse.mimetype['css'] = 'text/css'
