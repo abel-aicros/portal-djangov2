@@ -355,5 +355,10 @@ JAZZMIN_UI_TWEAKS = {
     }
 }
 
-import mimetypes
-mimetypes.add_type("text/css", ".css", True)
+MIDDLEWARE = [
+    # ...
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # ...
+]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
