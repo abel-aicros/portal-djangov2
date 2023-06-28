@@ -537,3 +537,7 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.tarjetas, .cartas, #cartas02,.card, .target, #alianza, .HistoriaSlider, #Servicos_Categorias{
+    cursor: grab;
+}
