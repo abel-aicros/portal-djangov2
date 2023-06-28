@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3+-pi=go@1l=+fx4t+8idyl$ou(12kv@m!7^=x$!m+36=cf7a)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10*1024*1024
 
 ALLOWED_HOSTS = ["*"]
@@ -160,7 +160,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ['aicrosv2.onrender.com/static/' ]
+STATICFILES_DIRS = [BASE_DIR+'/static/' ]
 
 STATIC_ROOT = 'static_Server'
 
@@ -198,8 +198,8 @@ EMAIL_HOST_PASSWORD = 'P0rt@lDjango2023*'
 EMAIL_PORT = '465'
 # EMAIL_USE_TLS = True
 EMAIL_USE_SSL = True 
-EMAIL_RECEIVER = [ 'abeldarrain@aicros.cu']
-# EMAIL_RECEIVER = ['aicros@aicros.cu', 'comercial@aicros.cu', 'abeldarrain@aicros.cu']
+# EMAIL_RECEIVER = [ 'abeldarrain@aicros.cu']
+EMAIL_RECEIVER = ['aicros@aicros.cu', 'comercial@aicros.cu', 'abeldarrain@aicros.cu']
 
 
 # JAZZMIN SETTINGS

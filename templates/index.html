@@ -5,8 +5,11 @@
    
         <section id="banner" class="bannerclass">
             <h1 class='banner_title'>
+                {% if banner_title %}
                 <div>{{banner_title.texto}}<br><p class='banner_title_bold'>{{banner_title.texto_negrita}}</p>
+                    
                 </div></h1> 
+                {% endif %}
         </section>
          
         <div id="Secciones">
