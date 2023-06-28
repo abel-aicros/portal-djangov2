@@ -36,14 +36,15 @@
                 </div>
                 {% endfor %}
             </div>
+            {% for i in servicio_aicros %}
             <h3 id="Servicos_Categorias_h3">
-                <small> Categorías de servicios. </small>
+                <small> {{i.line_id}} </small>
             </h3>
         </div>
         
         <div id="Servicioscard" class="card ">
             
-            {% for i in servicio_aicros %}
+           
 
                 <article id="{{i.line_id.id}}">
                     <img src="{{i.line_id.ícono.url}}" alt="icono">
@@ -52,9 +53,10 @@
                     </p>
                 </article>
 
-            {% endfor %}
+            
             
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

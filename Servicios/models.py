@@ -33,7 +33,7 @@ class Descripcion_Servicios_Aicros(models.Model):
 # ---------------- Servicio_Aicros -------------------------------------------------------------------------
 
 class Servicio_Aicros(models.Model):
-    foto_carrusel = models.ImageField(upload_to="Página Servicios/Servicios", blank=True, null=False, verbose_name="Foto Carrusel", default="../static/img/logo/aicros-logo.png")
+    foto_carrusel = models.ImageField(upload_to="Página Servicios/Servicios", blank=True, null=False, verbose_name="Foto Carrusel", default="../static_Server/img/logo/aicros-logo.jpg")
     show = models.BooleanField(default=True, verbose_name="Mostrar en carrusel")
     show_text = models.BooleanField(default=True, verbose_name="Mostrar texto")
     show_image = models.BooleanField(default=True, verbose_name="Mostrar imagen")

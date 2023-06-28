@@ -32,8 +32,8 @@ class Descripcion_Productos_Aicros(models.Model):
 # ---------------- Producto_Aicros -------------------------------------------------------------------------
 
 class Producto_Aicros(models.Model):
-    foto = models.ImageField(upload_to="Página Productos/Aicros/Imágenes/Imágenes", blank=True, null=False, default="../static/img/logo/aicros-logo.png")
-    foto_carrusel = models.ImageField(upload_to="Página Productos/Aicros/Imágenes/Imágenes", blank=True, null=False, default="../static/img/logo/aicros-logo.png", verbose_name="Foto Carrusel")
+    foto = models.ImageField(upload_to="Página Productos/Aicros/Imágenes/Imágenes", blank=True, null=False, default="../static_Server/img/logo/aicros-logo.jpg")
+    foto_carrusel = models.ImageField(upload_to="Página Productos/Aicros/Imágenes/Imágenes", blank=True, null=False, default="../static_Server/img/logo/aicros-logo.jpg", verbose_name="Foto Carrusel")
     show = models.BooleanField(default=True, verbose_name="Mostrar en carrusel")
     show_text = models.BooleanField(default=True, verbose_name="Mostrar texto")
     show_image = models.BooleanField(default=True, verbose_name="Mostrar imagen")
@@ -71,9 +71,9 @@ class Descripcion_Productos_Distribuidos(models.Model):
 
 class Producto_Distribuido_Aicros(models.Model):
     foto = models.ImageField(
-        upload_to="Página Productos/Aicros/Distribuidos/Imágenes", blank=True, null=False, default="../static/img/AicrosIdentificador.png"
+        upload_to="Página Productos/Aicros/Distribuidos/Imágenes", blank=True, null=False, default="../static_Server/img/logo/aicros-logo.jpg"
     )
-    foto_carrusel = models.ImageField(upload_to="Página Productos/Aicros/Distribuidos/Imágenes", blank=True, null=False, default="../static/img/logo/aicros-logo.png", verbose_name="Foto Carrusel")
+    foto_carrusel = models.ImageField(upload_to="Página Productos/Aicros/Distribuidos/Imágenes", blank=True, null=False, default="../static_Server/img/logo/aicros-logo.jpg", verbose_name="Foto Carrusel")
     show = models.BooleanField(default=True, verbose_name="Mostrar en carrusel")
     show_text = models.BooleanField(default=True, verbose_name="Mostrar texto")
     show_image = models.BooleanField(default=True, verbose_name="Mostrar imagen")
