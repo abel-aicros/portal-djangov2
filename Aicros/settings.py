@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3+-pi=go@1l=+fx4t+8idyl$ou(12kv@m!7^=x$!m+36=cf7a)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10*1024*1024
 
 ALLOWED_HOSTS = ["*"]
