@@ -12,7 +12,7 @@ function iniciar(e){
         inicilizacionSlider(".target",3700,true);
         inicilizacionSlider("#alianza",2000,true);
         footer = document.querySelector("footer");
-        footer.style.width = "101%"
+        footer.style.width = "100%"
     }else if(window.PaginaActual.PaginaActual== "Nosotros"){
         inicilizacionSlider(".HistoriaSlider",3000,false);
     }else if(window.PaginaActual.PaginaActual== "Servicios" ){
@@ -375,9 +375,10 @@ function EditarDocumento(columnas){
 ///////////////////////////////////////////////////////////////////////////////////////////
 function Categorias_de_Servicios( slider , categoria ){
     var Categorias = document.getElementById('Servicioscard')
+    var tag = document.getElementById("texto_categoria_servicios");
 
     if(slider.carrusel.children[categoria.target.id-1].id == "Categoria_seleccionada"){
-
+        tag.innerHTML  = "Todos";
         slider.carrusel.children[categoria.target.id-1].id = categoria.target.id;
         for (let i = 0; i < slider.carrusel.children.length; i++) {
             slider.carrusel.children[i].children[0].style.marginLeft = "10px";
@@ -393,6 +394,7 @@ function Categorias_de_Servicios( slider , categoria ){
         }
         slider.carrusel.children[parseInt(categoria.target.id) - 1].children[0].style.marginLeft = "0px";
         slider.carrusel.children[categoria.target.id - 1].id = "Categoria_seleccionada";
+        tag.innerHTML  = slider.carrusel.children[categoria.target.id - 1].getAttribute("name").toUpperCase();
         if (slider.SeMovio == false){
             for (let i = 0; i < Categorias.children.length; i++) {
                 if(Categorias.children[i].id != categoria.target.id){

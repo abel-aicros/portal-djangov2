@@ -44,7 +44,7 @@ class Servicio_Aicros(models.Model):
         return str(self.descripción)
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["line_id"]
         verbose_name = "Servicio Aicros"
         verbose_name_plural = "Servicio Aicros"
 

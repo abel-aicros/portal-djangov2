@@ -18,7 +18,7 @@ class Encabezado_Documentos(models.Model):
 # ---------------- Texto_Documentos_Rapidos -------------------------------------------------------------------------
 
 class Texto_Documentos_Rapidos(models.Model):
-    título = models.CharField(max_length=50)
+    título = models.CharField(max_length=50, blank=False)
     texto = models.TextField()
 
     def __str__(self):
@@ -34,7 +34,7 @@ class Texto_Documentos_Rapidos(models.Model):
 class DocumentoRap(models.Model):
     nombre = models.CharField(max_length=500)
     doc_file = models.FileField(
-        upload_to="Página Documentos/Documentos",verbose_name='Archivos', default="Página Documentos/Documentos/default.docx"
+        upload_to="Página Documentos/Documentos",verbose_name='Archivos', default="Página Documentos/Documentos/default.docx", blank=False,
     )
 
 
@@ -50,7 +50,7 @@ class DocumentoRap(models.Model):
 
 #------------------------Secciones de Document
 class Seccion(models.Model):
-    texto = models.CharField(max_length=100, blank=True, null=False, default='Sección de Documentos')
+    texto = models.CharField(max_length=100, blank=False, null=False, default='Sección de Documentos')
 
     def __str__(self):
         return str(self.texto)
@@ -67,7 +67,7 @@ class Seccion(models.Model):
 class Documento(models.Model):
     nombre = models.CharField(max_length=500)
     doc_file = models.FileField(
-        upload_to="Página Documentos/Documentos", verbose_name='Archivo', default="Página Documentos/Documentos/default.docx"
+        upload_to="Página Documentos/Documentos", verbose_name='Archivo', default="Página Documentos/Documentos/default.docx",blank=False,
     )
     seccion =  models.ManyToManyField(Seccion, blank=False,verbose_name='sección')
 

@@ -273,7 +273,6 @@
 .logoProducto img{
     width: 100%;
     height:AUTO;
-    border-radius: 100%;
     margin: -20px;
 }
 .infoProducto{
@@ -520,9 +519,9 @@
 .container404{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 80vw;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
 }
 .text404{
     font: 700 32pt 'Helvetica', sans-serif !important;
@@ -530,10 +529,15 @@
 }
 .img404{
     max-height: 400px;
+    max-width: 600px;
 }
 
 .carrusel-img{
-    background-size: contain !important;
+    background-size: cover !important;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.tarjetas, .cartas, #cartas02,.card, .target, #alianza, .HistoriaSlider, #Servicos_Categorias{
+    cursor: grab;
 }

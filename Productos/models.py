@@ -40,10 +40,7 @@ class Producto_Aicros(models.Model):
     título = models.CharField(max_length=200, blank=True, null=True)
     resumen = models.TextField(max_length=200, default=título)
     descripción = models.TextField()
-    ícono = models.ImageField(
-        upload_to="Página Productos/Aicros/Ícono", blank=True, null=False, default="../static/img/AicrosIdentificador.png"
-    )
-    nombre_Botón = models.CharField(max_length=30)
+    
 
     def __str__(self):
         return str(self.título)
@@ -71,19 +68,16 @@ class Descripcion_Productos_Distribuidos(models.Model):
 
 class Producto_Distribuido_Aicros(models.Model):
     foto = models.ImageField(
-        upload_to="Página Productos/Aicros/Distribuidos/Imágenes", blank=True, null=False, default="../static_Server/img/logo/aicros-logo.jpg"
+        upload_to="Página Productos/Aicros/Distribuidos/Imágenes", blank=False, null=False, default="../static_Server/img/logo/aicros-logo.jpg"
     )
     foto_carrusel = models.ImageField(upload_to="Página Productos/Aicros/Distribuidos/Imágenes", blank=True, null=False, default="../static_Server/img/logo/aicros-logo.jpg", verbose_name="Foto Carrusel")
     show = models.BooleanField(default=True, verbose_name="Mostrar en carrusel")
     show_text = models.BooleanField(default=True, verbose_name="Mostrar texto")
     show_image = models.BooleanField(default=True, verbose_name="Mostrar imagen")
-    título = models.CharField(max_length=200, blank=True, null=True)
+    título = models.CharField(max_length=200, blank=False)
     resumen = models.TextField(max_length=200, default=título)
     descripción = models.TextField()
-    ícono = models.ImageField(
-        upload_to="Página Productos/Aicros/Distribuidos/Ícono", blank=True, null=False, default="../static/img/AicrosIdentificador.png"
-    )
-    nombre_Botón = models.CharField(max_length=30)
+    
     
 
     def __str__(self):

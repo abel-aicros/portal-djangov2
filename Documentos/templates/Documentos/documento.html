@@ -39,7 +39,7 @@
                     {% for i in doc_rap %}
                     
                         <article>
-                            <a href="{{i.documento.url}}" target="_blank">
+                            <a href="{{i.doc_file.url}}" target="_blank">
                                 <div>
                                     <img src="{% static 'img/icon/Propuesta de Diseño-108.svg' %}" alt="icono">
                                     <p>
@@ -98,7 +98,7 @@
         
         {% if vacio is 0 %}
             <section>
-                <p>Lo sentimos no existen documentos relacionados a su busquedas.</p>
+                <p>Lo sentimos no existen documentos relacionados a su búsquedas.</p>
             </section>
         {% endif %}
 

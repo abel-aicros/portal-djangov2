@@ -36,14 +36,14 @@
                         <article class="infoProducto">
                             <div>
                                 <h3>{{i}}</h3>
-                                <img src="{{i.ícono.url}}" alt="icono">
+                                <img src="{% static 'img/Propuesta_de_Diseño-133.png'%}" alt="icono">
                             </div>
                             <p>
                                 {{i.resumen}}
                             </p>
                             <input name='product_id' type="hidden" value="{{i.id}}">
                             <input name='ptype' type="hidden" value="aicros">
-                            <button>{{i.nombre_Botón}}</button>
+                            <button>Ver</button>
                         </article>
                     </div>
                     </form>
@@ -78,7 +78,7 @@
                         <article class="infoProducto">
                             <div>
                                 <h3>{{i}}</h3>
-                                <img src="{{i.ícono.url}}" alt="icono">
+                                <img src="{% static 'img/Propuesta_de_Diseño-133.png'%}" alt="icono">
                             </div>
                             <p>
                                 {{i.resumen}}
@@ -87,7 +87,7 @@
                             <input name='product_id' type="hidden" value="{{i.id}}">
                             <input name='ptype' type="hidden" value="Daicros">
 
-                            <button>{{i.nombre_Botón}}</button>
+                            <button>Ver</button>
                         </article>
                     </div>
                     </form>

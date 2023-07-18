@@ -29,21 +29,19 @@
             <header class="blanco"><h2>Servicios</h2></header>
             <div id="Servicos_Categorias">
                 {% for i in lineas_de_negocio %}
-                <div id="{{i.id}}" >
-                    <article id="{{i.id}}">
+                <div id="{{i.id}}" name="{{i}}">
+                    <article id="{{i.id}}" >
                         <img id="{{i.id}}" src="{{i.ícono.url}}" alt="icono" draggable="false">
                     </article>
                 </div>
                 {% endfor %}
             </div>
-            {% for i in servicio_aicros %}
             <h3 id="Servicos_Categorias_h3">
-                <small> {{i.line_id}} </small>
+                <small id="texto_categoria_servicios"> Todos </small>
             </h3>
         </div>
-        
         <div id="Servicioscard" class="card ">
-            
+            {% for i in servicio_aicros %}   
            
 
                 <article id="{{i.line_id.id}}">
@@ -52,11 +50,10 @@
                         {{i}}
                     </p>
                 </article>
-
+                {% endfor %}
             
             
         </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

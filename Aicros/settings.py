@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'Encuestas',
 ]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 WHITENOISE_MIMETYPES = {
     '.js': 'application/javascript',
@@ -59,7 +58,7 @@ WHITENOISE_MIMETYPES = {
 }
 
 MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    
     
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -167,6 +166,7 @@ STATIC_ROOT = 'static_Server'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -246,7 +246,7 @@ JAZZMIN_SETTINGS = {
         "auth.user": "fas fa-user",
         "users.User": "fas fa-user",
         "auth.Group": "fas fa-users",
-        "admin.LogEntry": "fas fa-users",
+        "admin.LogEntry": "fas fa-users", 
         # "Sweb.LogEntry": "fas fa-users",
     },
 

@@ -1,0 +1,12 @@
+.tarjeta {
+
+margin-left: 5px;
+
+
+}
+
+@media only screen and (max-width:380px){
+
+    .md-2-lineasCell{
+        display: none;
+}}

@@ -15,7 +15,7 @@ def productosView(request):
         product_name = product.título
         product_description  = product.descripción
         product_image = product.foto.url
-        product_icon = product.ícono.url
+        product_icon = '../static/img/Propuesta_de_Diseño-133.png'
         
         return render(request, 'Productos/producto.html', {'product_name': product_name, 'product_description':product_description, 'product_image': product_image, 'product_icon': product_icon,'banner_title': banner_title,})
     

@@ -5,9 +5,11 @@
 {% block content %}
 <div class="nuevaSeccion">
     <section id="banner" class="bannerclass">
-        <h1 class='banner_title'>
-            <div>{{banner_title.texto}}<br><p class='banner_title_bold'>{{banner_title.texto_negrita}}</p>
-            </div></h1> 
+        {% for i in p404 %}
+            <header> <h1 class="text404">{{i.texto}}</h1></header>
+            <img src="{% static '/img/logo/invertido.png'%}" class="img404" alt="">
+            {% endfor %}
+
     </section>
     <div class="SeccionesGenerales">
         <section class="seccionInicial container404">
